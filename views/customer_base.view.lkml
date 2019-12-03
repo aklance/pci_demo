@@ -13,7 +13,7 @@ view: customer_base {
     sql: ${TABLE}.Age ;;
   }
 
-  dimension: cust_id {
+  dimension: customer_id {
     type: string
     sql: ${TABLE}.Cust_ID ;;
   }

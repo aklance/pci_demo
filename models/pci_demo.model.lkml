@@ -23,3 +23,24 @@ explore: customer_base {}
 explore: fraud_base {}
 
 explore: transaction_base {}
+
+explore: PCI_demo {
+  view_name:  credit_card_base
+  join: customer_base {
+    type:  left_outer
+    sql_on: ${credit_card_base.customer_id} = ${customer_base.customer_id} ;;
+    relationship: many_to_one
+  }
+
+  join: transaction_base {
+    type:  left_outer
+    sql_on:  ${credit_card_base.masked_credit_card_number} = ${transaction_base.credit_card_number};;
+    relationship: many_to_many
+  }
+
+  join: fraud_base {
+    type: left_outer
+    sql_on: ${transaction_base.transaction_id} = ${fraud_base.transaction_id} ;;
+    relationship: many_to_many
+  }
+}

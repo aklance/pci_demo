@@ -14,7 +14,7 @@ view: credit_card_base {
   }
 
   dimension: credit_card_number {
-#     hidden: yes
+    hidden: yes
     type: string
     sql: ${TABLE}.Card_Number ;;
   }
@@ -24,7 +24,7 @@ view: credit_card_base {
     type: string
     sql:
     CONCAT(
-        RPAD('X', LENGTH(REPLACE(${TABLE}.credit_card_number, "-", "")) - 4, 'X'),
+        RPAD('*', LENGTH(REPLACE(${TABLE}.credit_card_number, "-", "")) - 4, '*'),
         SUBSTR(REPLACE(${TABLE}.credit_card_number, "-", ""), -4, 4)) ;;
   }
 

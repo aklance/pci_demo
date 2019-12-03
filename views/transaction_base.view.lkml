@@ -8,9 +8,18 @@
 view: transaction_base {
   sql_table_name: PCI_demo.transaction_base ;;
 
-  dimension: credit_card_id {
+  dimension: credit_card_number {
+    hidden:  yes
     type: string
     sql: ${TABLE}.Credit_Card_ID ;;
+  }
+
+  dimension: masked_credit_card_number {
+    type: string
+    sql:
+    CONCAT(
+        RPAD('*', LENGTH(REPLACE(${TABLE}.credit_card_ID, "-", "")) - 4, '*'),
+        SUBSTR(REPLACE(${TABLE}.credit_card_ID, "-", ""), -4, 4)) ;;
   }
 
   dimension_group: transaction {
