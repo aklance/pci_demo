@@ -1,6 +1,6 @@
 #############################################################################################################
 # Owner: Anakarina Lance
-# Purpose: Exposing credit card dummy data to show how the PCI offering functions.
+# Purpose: Exposing dummy credit card data to show how the PCI offering functions.
 # Created: December 2, 2019
 # Last Updated: N/A
 #############################################################################################################

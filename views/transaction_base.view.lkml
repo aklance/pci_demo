@@ -1,3 +1,10 @@
+#############################################################################################################
+# Owner: Anakarina Lance
+# Purpose: Exposing dummy transaction data to show how the PCI offering functions.
+# Created: December 2, 2019
+# Last Updated: N/A
+#############################################################################################################
+
 view: transaction_base {
   sql_table_name: PCI_demo.transaction_base ;;
 
