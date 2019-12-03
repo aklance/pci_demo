@@ -22,7 +22,10 @@ view: credit_card_base {
 
   dimension: masked_credit_card_number {
     type: string
-    sql: CONCAT(LEFT(${TABLE}.credit_card_number, 6), RPAD('X', LEN(${TABLE}.credit_card_number) - 8, 'X'), RIGHT(${TABLE}.credit_card_number, 4)) ;;
+    sql:
+    CONCAT(
+        RPAD('X', LENGTH(REPLACE(${TABLE}.credit_card_number, "-", "")) - 4, 'X'),
+        SUBSTR(REPLACE(${TABLE}.credit_card_number, "-", ""), -4, 4)) ;;
   }
 
   dimension: credit_limit {
