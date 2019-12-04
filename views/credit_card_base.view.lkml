@@ -15,7 +15,7 @@ view: credit_card_base {
 
   dimension: credit_card_number {
     primary_key:  yes
-    hidden: yes
+#     hidden: yes
     type: string
     sql: ${TABLE}.Card_Number ;;
   }

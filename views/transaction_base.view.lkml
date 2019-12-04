@@ -9,7 +9,7 @@ view: transaction_base {
   sql_table_name: PCI_demo.transaction_base ;;
 
   dimension: credit_card_number {
-    hidden:  yes
+#     hidden:  yes
     type: string
     sql: ${TABLE}.Credit_Card_ID ;;
   }
