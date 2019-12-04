@@ -38,6 +38,7 @@ view: transaction_base {
   }
 
   dimension: transaction_id {
+    primary_key:  yes
     type: string
     sql: ${TABLE}.Transaction_ID ;;
   }
