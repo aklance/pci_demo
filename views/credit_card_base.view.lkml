@@ -14,6 +14,7 @@ view: credit_card_base {
   }
 
   dimension: credit_card_number {
+    primary_key:  yes
     hidden: yes
     type: string
     sql: ${TABLE}.Card_Number ;;
@@ -34,7 +35,6 @@ view: credit_card_base {
   }
 
   dimension: customer_id {
-    primary_key:  yes
     type: string
     sql: ${TABLE}.Cust_ID ;;
   }
