@@ -53,6 +53,11 @@ view: transaction_base {
     sql: ${TABLE}.Transaction_Value ;;
   }
 
+  dimension: order_id {
+    type:  number
+    sql: ${TABLE}.order_id ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []

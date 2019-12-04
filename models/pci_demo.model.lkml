@@ -24,6 +24,8 @@ explore: fraud_base {}
 
 explore: transaction_base {}
 
+explore: test {}
+
 explore: PCI_demo {
   view_name:  credit_card_base
   join: customer_base {
@@ -43,4 +45,11 @@ explore: PCI_demo {
     sql_on:  ${fraud_base.transaction_id} = ${transaction_base.transaction_id}  ;;
     relationship: many_to_many
   }
+
+  join: test {
+    type:  left_outer
+    sql_on: ${transaction_base.order_id} = ${test.order_id} ;;
+    relationship: one_to_one
+  }
+
 }
