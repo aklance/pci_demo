@@ -14,6 +14,7 @@ view: customer_base {
   }
 
   dimension: customer_id {
+    primary_key:  yes
     type: string
     sql: ${TABLE}.Cust_ID ;;
   }

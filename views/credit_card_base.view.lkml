@@ -24,8 +24,8 @@ view: credit_card_base {
     type: string
     sql:
     CONCAT(
-        RPAD('*', LENGTH(REPLACE(${TABLE}.credit_card_number, "-", "")) - 4, '*'),
-        SUBSTR(REPLACE(${TABLE}.credit_card_number, "-", ""), -4, 4)) ;;
+        RPAD('*', LENGTH(REPLACE(${TABLE}.card_number, "-", "")) - 4, '*'),
+        SUBSTR(REPLACE(${TABLE}.card_number, "-", ""), -4, 4)) ;;
   }
 
   dimension: credit_limit {
@@ -34,6 +34,7 @@ view: credit_card_base {
   }
 
   dimension: customer_id {
+    primary_key:  yes
     type: string
     sql: ${TABLE}.Cust_ID ;;
   }

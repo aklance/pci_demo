@@ -29,18 +29,18 @@ explore: PCI_demo {
   join: customer_base {
     type:  left_outer
     sql_on: ${credit_card_base.customer_id} = ${customer_base.customer_id} ;;
-    relationship: many_to_one
+    relationship: one_to_many
   }
 
   join: transaction_base {
     type:  left_outer
-    sql_on:  ${credit_card_base.masked_credit_card_number} = ${transaction_base.credit_card_number};;
-    relationship: many_to_many
+    sql_on:  ${credit_card_base.masked_credit_card_number} = ${transaction_base.masked_credit_card_number};;
+    relationship: many_to_one
   }
 
   join: fraud_base {
     type: left_outer
-    sql_on: ${transaction_base.transaction_id} = ${fraud_base.transaction_id} ;;
+    sql_on:  ${fraud_base.transaction_id} = ${transaction_base.transaction_id}  ;;
     relationship: many_to_many
   }
 }

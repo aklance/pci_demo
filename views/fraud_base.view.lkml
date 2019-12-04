@@ -14,6 +14,7 @@ view: fraud_base {
   }
 
   dimension: transaction_id {
+    primary_key:  yes
     type: string
     sql: ${TABLE}.Transaction_ID ;;
   }
@@ -21,5 +22,10 @@ view: fraud_base {
   measure: count {
     type: count
     drill_fields: []
+  }
+
+  measure: sum_of_fraud_events {
+    type:  sum
+    sql:  ${fraud_flag} ;;
   }
 }
