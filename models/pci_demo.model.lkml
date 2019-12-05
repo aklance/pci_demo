@@ -52,4 +52,10 @@ explore: PCI_demo {
     relationship: one_to_one
   }
 
+  join: inventory_items {
+    type:  left_outer
+    sql_on: ${inventory_items.id} = ${test.inventory_item_id};;
+    relationship: one_to_many
+  }
+
 }
